@@ -1,0 +1,45 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.Migliaccio.DB_ProgressBar</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>DragonBall ProgressBar</name>
+    <version>3.0</version>
+    <vendor email="" url="">Musto&amp;Migliaccio</vendor>
+    <description><![CDATA[
+        Use the Dragonball progressBar to recreate the most iconic fights while loading and praying for your project files.<br>
+      <em></em>
+
+      Special thanks, and credits, to all the artists of Ulsw (and similar) games for fighters sprites.
+  ]]></description>
+    <change-notes><![CDATA[
+      <br>
+      <em>Sprite pool is now updated!</em>
+    ]]>
+    </change-notes>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+    <applicationConfigurable parentId="appearance"
+                             instance="com.example.db_progressbar.configuration.DragonBallProgressConfigurable"
+                             id="configuration.DragonBallProgressConfigurable"
+                             displayName="DragonBall ProgressBar Settings" />
+    <applicationService
+            serviceImplementation="com.example.db_progressbar.configuration.DragonBallProgressState" />
+    </extensions>
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+    <applicationListeners>
+        <listener class="com.example.db_progressbar.progressBar.DragonBallApplicationComponent"
+                  topic="com.intellij.ide.ui.LafManagerListener" />
+    </applicationListeners>
+</idea-plugin>
