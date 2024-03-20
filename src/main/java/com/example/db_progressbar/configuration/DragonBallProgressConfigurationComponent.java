@@ -232,8 +232,8 @@ public class DragonBallProgressConfigurationComponent {
     private JPanel fighterPanelWithOptions(ArrayList<ImageIcon> rfList , ArrayList<ImageIcon> lfList){
         //Carico le impostazioni correnti - Start
         var state  = DragonBallProgressState.getInstance().getState();
-        ImageIcon currentSelectedL = generaIco(state.getPathLeftIco());
-        ImageIcon currentSelectedR = generaIco(state.getPathRightIco());
+        ImageIcon currentSelectedL = generaIco(state.getPathLeftIco(), 'l');
+        ImageIcon currentSelectedR = generaIco(state.getPathRightIco(), 'r');
         //Carico le impostazioni correnti - End
 
         final JPanel fighterSelectionPanelContainer = new JPanel();
@@ -469,19 +469,17 @@ public class DragonBallProgressConfigurationComponent {
         return (type.equalsIgnoreCase("r")?r_icons:l_icons);
     }
 
-    public ImageIcon generaIco(String path){
+    public ImageIcon generaIco(String path, char side){
         try{
             ImageIcon Icon = new ImageIcon(Icons.class.getClassLoader().getResource(path));
             return Icon;
         }catch(Exception e){
             System.out.println("CONFIG COMP - generaIco - exception: "+e.getMessage());
             System.out.println("generaIco - setto default: "+e.getMessage());
-            if(i == 0){
+            if(side=='l'){
                 //path = "Resources/Sprites/[LeftFighter]_Goku_v1.png";
                 path = Icons.basePath+"[LeftFighter]_Goku_v1.png";
-                i++;
-            }else{
-                i--;
+            }else if(side == 'r'){
                 //path="Resources/Sprites/[RightFighter]_Vegeta_v1.gif";
                 path=Icons.basePath+"[RightFighter]_Vegeta_v1.gif";
             }

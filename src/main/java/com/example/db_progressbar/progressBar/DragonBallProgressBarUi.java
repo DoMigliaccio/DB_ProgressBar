@@ -158,8 +158,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         ImageIcon scaledIcon = velocity > 0 ? (fighterOnda.get(0)) : (fighterOnda.get(1));
         scaledIcon.paintIcon(progressBar, g, offset2 - JBUI.scale(16), -JBUI.scale(4));
 
-        selectedIconLeft = generaIco(state.getPathLeftIco());
-        selectedIconRight = generaIco(state.getPathRightIco());
+        selectedIconLeft = generaIco(state.getPathLeftIco(), 'l');
+        selectedIconRight = generaIco(state.getPathRightIco(), 'r');
         if(state.getPathRightIco().contains("MajinBu_v1")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
         }else{
@@ -235,8 +235,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
             //Prendo l'elemento 0 perchè è quello che va da destra a sinistra
             fighterOnda.get(0).paintIcon(progressBar,g2, amountFull - JBUI.scale(1), -JBUI.scale(4));
 
-            selectedIconLeft = generaIco(state.getPathLeftIco());
-            selectedIconRight = generaIco(state.getPathRightIco());
+            selectedIconLeft = generaIco(state.getPathLeftIco(),'l');
+            selectedIconRight = generaIco(state.getPathRightIco(),'r');
             if(state.getPathRightIco().contains("MajinBu_v1")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
             }else{
@@ -293,22 +293,21 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         return JBUI.scale(16);
     }
 
-    public ImageIcon generaIco(String path){
+    public ImageIcon generaIco(String path, char side){
         try{
             ImageIcon Icon = new ImageIcon(Icons.class.getClassLoader().getResource(path));
             return Icon;
         }catch(Exception e){
             System.out.println("DBUI-generaIco - exception: "+e.getMessage());
             System.out.println("generaIco - setto default: "+e.getMessage());
-            if(i == 0){
+            if(side=='l'){
                 path = Icons.basePath+"[LeftFighter]_Goku_v1.png";
-                i++;
-            }else{
-                i--;
+            }else if(side == 'r'){
                 path=Icons.basePath+"[RightFighter]_Vegeta_v1.gif";
             }
             ImageIcon Icon = new ImageIcon(Icons.class.getClassLoader().getResource(path));
             return Icon;
+
         }
     }
 
