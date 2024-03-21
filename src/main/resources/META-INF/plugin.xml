@@ -9,18 +9,26 @@
     <version>3.1.2</version>
     <vendor email="" url="">Musto&amp;Migliaccio</vendor>
     <description><![CDATA[
-        Use the Dragonball progressBar to recreate the most iconic fights while loading and praying for your project files.<br>
-      <em></em>
+        Introducing "DragonBall ProgressBar" – a dynamic IntelliJ IDE plugin designed to revolutionize the visual experience of progress bars within your development environment. Completely free and effortlessly customizable, this innovative tool injects an element of creativity and personalization into your coding journey.
+        <br>
+        🐉 Gone are the days of mundane progress indicators. With "DragonBall ProgressBar," developers can immerse themselves in the vibrant world of Dragonball, as each progress bar transforms into a canvas showcasing animated pixel-art characters from the beloved universe. From the iconic Goku to the formidable Vegeta, the possibilities are as vast as the Dragonball saga itself.
+        <br>
+        🎨 This plugin offers unparalleled flexibility, allowing users to seamlessly switch between their favorite characters or set the plugin to rotate through a diverse array of Dragonball heroes and villains. Whether you're powering through lines of code or awaiting the completion of a lengthy process, "DragonBall ProgressBar" adds a touch of whimsy and motivation to your development workflow.
+        <br>
+        🚀 Experience a fusion of functionality and fandom like never before with "DragonBall ProgressBar" – the must-have companion for IntelliJ IDE users seeking to infuse their coding environment with a dash of Dragonball magic. Elevate your coding experience today and let your progress bars reflect the spirit of your favorite Dragonball characters.
+        <br>
+        🎉 Don't miss out on the opportunity to make coding sessions more enjoyable and engaging – download "DragonBall ProgressBar" now and unleash the power of Dragonball in your IntelliJ IDE!
+        <em></em>
 
-      Special thanks, and credits, to all the artists of Ulsw (and similar) games for fighters sprites.
-      Inspired by 'Hadouken Progress Bar'.
+        Special thanks, and credits, to all the artists of Ulsw (and similar) games for fighters sprites.
+        Inspired by 'Hadouken Progress Bar'.
   ]]></description>
     <change-notes><![CDATA[
       <br>
       <em>Sprite pool is now updated!</em>
       <br>
-      <em>3.1.1 - Extended compatibility Range, minor fix.</em>
-      <em>3.1.2 - Minor fix. </em>
+      <em>• 3.1.1 - Extended compatibility Range, minor fix.</em>
+      <em>• 3.1.2 - Minor fix: Added MessageDialog after fighter selection.</em>
     ]]>
     </change-notes>
 
