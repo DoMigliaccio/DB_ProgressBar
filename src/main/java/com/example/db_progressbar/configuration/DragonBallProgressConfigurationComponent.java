@@ -2,6 +2,7 @@ package com.example.db_progressbar.configuration;
 
 import com.intellij.openapi.ui.LabeledComponent;
 
+import com.intellij.openapi.ui.Messages;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.util.ui.FormBuilder;
 import org.jetbrains.annotations.NotNull;
@@ -280,7 +281,6 @@ public class DragonBallProgressConfigurationComponent {
     }
 
     public JPanel createOrganizedPanel(Map<String, ArrayList<ImageIcon>> mapIcons,ImageIcon currentSelected, String side){
-
         JPanel organizedPanel = new JPanel(new FlowLayout());
         organizedPanel.setLayout(new BoxLayout(organizedPanel,BoxLayout.Y_AXIS));
         //organizedPanel.setLayout(new GridLayout(1,1));
@@ -304,8 +304,10 @@ public class DragonBallProgressConfigurationComponent {
                             showOptionPanel.add(jbutton);
                             jbutton.addItemListener(itemListener);
                             if(side == "l"){
+                                jbutton.addActionListener(e -> showNotification("Left fighter selected correctly! Click 'Apply' to see it in preview or 'Ok' to save directly the changes."));
                                 buttonGroup_LF.add(jbutton);
                             }else if(side == "r"){
+                                jbutton.addActionListener(e -> showNotification("Right fighter selected correctly! Click 'Apply' to see it in preview or 'Ok' to save directly the changes."));
                                 buttonGroup_RF.add(jbutton);
                             }
                         }
@@ -331,8 +333,10 @@ public class DragonBallProgressConfigurationComponent {
                         organizedPanel.add(jbutton);
                         jbutton.addItemListener(itemListener);
                         if(side == "l"){
+                            jbutton.addActionListener(e -> showNotification("Left fighter selected correctly! Click 'Apply' to see it in preview or 'Ok' to save directly the changes."));
                             buttonGroup_LF.add(jbutton);
                         }else if(side == "r"){
+                            jbutton.addActionListener(e -> showNotification("Right fighter selected correctly! Click 'Apply' to see it in preview or 'Ok' to save directly the changes."));
                             buttonGroup_RF.add(jbutton);
                         }
                     }
@@ -341,6 +345,11 @@ public class DragonBallProgressConfigurationComponent {
         }
 
         return organizedPanel;
+    }
+
+    private void showNotification(String message) {
+        ImageIcon checkMark = Icons.CheckMark;
+        Messages.showMessageDialog(message, "Success",checkMark);
     }
 
     ItemListener itemListener = new ItemListener() {

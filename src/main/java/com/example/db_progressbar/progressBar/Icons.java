@@ -153,4 +153,8 @@ public interface Icons {
     ImageIcon OndaRev_Empty = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaR_C16.gif"));
 
 
+
+    ImageIcon CheckMark = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"selected_greenMark.png"));
+
+
 }
