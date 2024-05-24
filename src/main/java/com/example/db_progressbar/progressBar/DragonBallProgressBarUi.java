@@ -162,6 +162,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         selectedIconRight = generaIco(state.getPathRightIco(), 'r');
         if(state.getPathRightIco().contains("MajinBu_v1")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
+        }else if(state.getPathRightIco().contains("Vegito_v2")){
+            selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(35), -2);
         }else{
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(30), -2);
         }
@@ -239,6 +241,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
             selectedIconRight = generaIco(state.getPathRightIco(),'r');
             if(state.getPathRightIco().contains("MajinBu_v1")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
+            }else if(state.getPathRightIco().contains("Vegito_v2")){
+                selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(35), -2);
             }else{
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(30), -2);
             }
@@ -318,10 +322,11 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
             if(leftFighterName.contains("Vegeta_v5") ||
                     leftFighterName.contains("Trunks_v1")||
-                    leftFighterName.contains("MajinBu_v3")||
                     leftFighterName.contains("C19_v1")||
                     leftFighterName.contains("C20_v1")||
                     leftFighterName.contains("Radish_v1")||
+                    leftFighterName.contains("Vegito_v2")||
+                    leftFighterName.contains("Nappa_v1")||
                     leftFighterName.contains("Tensing_v1")){
                 ondaIconList.add(Icons.Onda_Yellow);
                 ondaIconList.add(Icons.OndaRev_Yellow);
@@ -336,7 +341,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
             }else if(leftFighterName.contains("Freezer") ||
                         leftFighterName.contains("MajinBu_v2")||
-                        leftFighterName.contains("MajinBu_v4")||
+                        leftFighterName.contains("MajinBu_v5")||
                         leftFighterName.contains("Shenron_v1")){
                 ondaIconList.add(Icons.Onda_Freezer);
                 ondaIconList.add(Icons.OndaRev_Freezer);

@@ -42,8 +42,8 @@ public class DragonBallProgressConfigurationComponent {
     ButtonGroup buttonGroup_LF = new ButtonGroup();
     ButtonGroup buttonGroup_RF = new ButtonGroup();
 
-    String[] orderCriteria = {"Goku","Muten","Crillin","Radish","Tensing","Vegeta","Gohan","Junior",
-            "Freezer","Trunks","C19","C20","C16","C17","C18","Cell","Gotenks","MajinBu","Hit","Jiren",
+    String[] orderCriteria = {"Goku","Muten","Crillin","Radish","Tensing","Vegeta","Nappa","Gohan","Junior",
+            "Freezer","Trunks","C19","C20","C16","C17","C18","Cell","Vegito","Gotenks","MajinBu","Hit","Jiren",
             "Beerus","Granolah", "Shenron"};
 
     public DragonBallProgressConfigurationComponent() {
@@ -169,66 +169,6 @@ public class DragonBallProgressConfigurationComponent {
         previewPanel.add(indeterminate);
         return previewPanel;
     }
-
-    /*private JPanel createFighterSelectionPanel(ArrayList<ImageIcon> rf , ArrayList<ImageIcon> lf){
-        final JPanel fighterSelectionPanel = new JPanel();
-        fighterSelectionPanel.setBorder(BorderFactory.createTitledBorder("[ Select one fighter for each side ]"));
-        fighterSelectionPanel.setLayout(new GridLayout(1,2));
-
-        ButtonGroup groupLfighters = new ButtonGroup();
-        ButtonGroup groupRfighters = new ButtonGroup();
-
-        var state  = DragonBallProgressState.getInstance().getState();
-        ImageIcon currentSelectedL = generaIco(state.getPathLeftIco());//state.getLeftFighter();
-        ImageIcon currentSelectedR = generaIco(state.getPathRightIco());//state.getRightFighter();
-        //System.out.println("state.getLeftFighterIco(): "+currentSelectedL.getDescription());
-        //System.out.println("state.getRightFighterIco(): "+currentSelectedR.getDescription());
-
-        //Attacking Fighters checkboxes
-        JPanel checkPanelLfighetrs = new JPanel(new GridLayout(0,1));
-        JLabel LSectiontitle= new JLabel("Attacking fighter: ");
-        checkPanelLfighetrs.add(LSectiontitle);
-        fighterSelectionPanel.add(checkPanelLfighetrs);
-        for (int i=0; i<lf.size(); i++) {
-            JRadioButtonMenuItem ljb = new JRadioButtonMenuItem(null,lf.get(i));
-            //System.out.println("Ico della lista #"+i+": "+lf.get(i));
-            if(lf.get(i).getDescription().equals(currentSelectedL.getDescription())){
-                ljb.setSelected(true);
-            }else{
-                ljb.setSelected(false);
-            }
-
-            checkPanelLfighetrs.add(ljb);
-            ljb.addItemListener(itemListener);
-            groupLfighters.add(ljb);
-        }
-
-        //Defending Fighters checkboxes
-        JPanel checkPanelRfighetrs = new JPanel(new GridLayout(0,1));
-        JLabel RSectiontitle= new JLabel("Defending fighter: ");
-        checkPanelRfighetrs.add(RSectiontitle);
-        fighterSelectionPanel.add(checkPanelRfighetrs);
-        for (int i=0; i<rf.size(); i++) {
-            JRadioButtonMenuItem rjb = new JRadioButtonMenuItem(null,rf.get(i));
-
-            //System.out.println("Ico della lista #"+i+": "+rf.get(i).getDescription());
-            if(rf.get(i).getDescription().equals(currentSelectedR.getDescription())){
-                rjb.setSelected(true);
-            }else{
-                rjb.setSelected(false);
-            }
-
-            checkPanelRfighetrs.add(rjb);
-            rjb.addItemListener(itemListener);
-            groupRfighters.add(rjb);
-
-        }
-
-        fighterSelectionPanel.add(checkPanelLfighetrs);
-        fighterSelectionPanel.add(checkPanelRfighetrs);
-        return fighterSelectionPanel;
-    }*/
-
 
     private JPanel fighterPanelWithOptions(ArrayList<ImageIcon> rfList , ArrayList<ImageIcon> lfList){
         //Carico le impostazioni correnti - Start
@@ -388,6 +328,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Goku_v5);
             l_icons.add(Icons.L_Goku_v6);
             l_icons.add(Icons.L_Goku_v7);
+            l_icons.add(Icons.L_Goku_v8);
             l_icons.add(Icons.L_Muten_v1);
             l_icons.add(Icons.L_Muten_v2);
             l_icons.add(Icons.L_Crillin_v1);
@@ -399,6 +340,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Vegeta_v4);
             l_icons.add(Icons.L_Vegeta_v5);
             l_icons.add(Icons.L_Vegeta_v6);
+            l_icons.add(Icons.L_Nappa_v1);
             l_icons.add(Icons.L_Gohan_v1);
             l_icons.add(Icons.L_Gohan_v2);
             l_icons.add(Icons.L_Gohan_v3);
@@ -406,7 +348,10 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Junior_v1);
             l_icons.add(Icons.L_Trunks_v1);
             l_icons.add(Icons.L_Trunks_v2);
+            l_icons.add(Icons.L_Vegito_v1);
+            l_icons.add(Icons.L_Vegito_v2);
             l_icons.add(Icons.L_Gotenks_v1);
+            l_icons.add(Icons.L_Gotenks_v2);
             l_icons.add(Icons.L_Freezer_v1);
             l_icons.add(Icons.L_Freezer_v2);
             l_icons.add(Icons.L_Freezer_v3);
@@ -421,6 +366,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_MajinBu_v2);
             l_icons.add(Icons.L_MajinBu_v3);
             l_icons.add(Icons.L_MajinBu_v4);
+            l_icons.add(Icons.L_MajinBu_v5);
             l_icons.add(Icons.L_Hit_v1);
             l_icons.add(Icons.L_Jiren_v1);
             l_icons.add(Icons.L_Jiren_v2);
@@ -436,6 +382,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Goku_v5);
             r_icons.add(Icons.R_Goku_v6);
             r_icons.add(Icons.R_Goku_v7);
+            r_icons.add(Icons.R_Goku_v8);
             r_icons.add(Icons.R_Muten_v1);
             r_icons.add(Icons.R_Crillin_v1);
             r_icons.add(Icons.R_Radish_v1);
@@ -446,13 +393,17 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Vegeta_v4);
             r_icons.add(Icons.R_Vegeta_v5);
             r_icons.add(Icons.R_Vegeta_v6);
+            r_icons.add(Icons.R_Nappa_v1);
             r_icons.add(Icons.R_Gohan_v1);
             r_icons.add(Icons.R_Gohan_v2);
             r_icons.add(Icons.R_Gohan_v3);
             r_icons.add(Icons.R_Junior_v1);
             r_icons.add(Icons.R_Trunks_v1);
             r_icons.add(Icons.R_Trunks_v2);
+            r_icons.add(Icons.R_Vegito_v1);
+            r_icons.add(Icons.R_Vegito_v2);
             r_icons.add(Icons.R_Gotenks_v1);
+            r_icons.add(Icons.R_Gotenks_v2);
             r_icons.add(Icons.R_Freezer_v1);
             r_icons.add(Icons.R_Freezer_v2);
             r_icons.add(Icons.R_Freezer_v3);
@@ -467,6 +418,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_MajinBu_v2);
             r_icons.add(Icons.R_MajinBu_v3);
             r_icons.add(Icons.R_MajinBu_v4);
+            r_icons.add(Icons.R_MajinBu_v5);
             r_icons.add(Icons.R_Hit_v1);
             r_icons.add(Icons.R_Jiren_v1);
             r_icons.add(Icons.R_Jiren_v2);
