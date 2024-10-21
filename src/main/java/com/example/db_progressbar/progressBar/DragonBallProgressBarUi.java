@@ -327,6 +327,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                     leftFighterName.contains("Radish_v1")||
                     leftFighterName.contains("Vegito_v2")||
                     leftFighterName.contains("Nappa_v1")||
+                    leftFighterName.contains("Chiaotzu_v1")||
+                    leftFighterName.contains("Saibaman_v1")||
                     leftFighterName.contains("Tensing_v1")){
                 ondaIconList.add(Icons.Onda_Yellow);
                 ondaIconList.add(Icons.OndaRev_Yellow);

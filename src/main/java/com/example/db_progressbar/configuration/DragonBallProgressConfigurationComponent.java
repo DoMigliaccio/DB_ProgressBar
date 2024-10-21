@@ -42,7 +42,7 @@ public class DragonBallProgressConfigurationComponent {
     ButtonGroup buttonGroup_LF = new ButtonGroup();
     ButtonGroup buttonGroup_RF = new ButtonGroup();
 
-    String[] orderCriteria = {"Goku","Muten","Crillin","Radish","Tensing","Vegeta","Nappa","Gohan","Junior",
+    String[] orderCriteria = {"Goku","Muten","Crillin","Radish","Tensing","Chiaotzu","Vegeta","Nappa","Saibaman","Gohan","Junior",
             "Freezer","Trunks","C19","C20","C16","C17","C18","Cell","Vegito","Gotenks","MajinBu","Hit","Jiren",
             "Beerus","Granolah", "Shenron"};
 
@@ -334,6 +334,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Crillin_v1);
             l_icons.add(Icons.L_Radish_v1);
             l_icons.add(Icons.L_Tensing_v1);
+            l_icons.add(Icons.L_Chiaotzu_v1);
             l_icons.add(Icons.L_Vegeta_v1);
             l_icons.add(Icons.L_Vegeta_v2);
             l_icons.add(Icons.L_Vegeta_v3);
@@ -341,6 +342,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Vegeta_v5);
             l_icons.add(Icons.L_Vegeta_v6);
             l_icons.add(Icons.L_Nappa_v1);
+            l_icons.add(Icons.L_Saibaman_v1);
             l_icons.add(Icons.L_Gohan_v1);
             l_icons.add(Icons.L_Gohan_v2);
             l_icons.add(Icons.L_Gohan_v3);
@@ -387,6 +389,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Crillin_v1);
             r_icons.add(Icons.R_Radish_v1);
             r_icons.add(Icons.R_Tensing_v1);
+            r_icons.add(Icons.R_Chiaotzu_v1);
             r_icons.add(Icons.R_Vegeta_v1);
             r_icons.add(Icons.R_Vegeta_v2);
             r_icons.add(Icons.R_Vegeta_v3);
@@ -394,6 +397,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Vegeta_v5);
             r_icons.add(Icons.R_Vegeta_v6);
             r_icons.add(Icons.R_Nappa_v1);
+            r_icons.add(Icons.R_Saibaman_v1);
             r_icons.add(Icons.R_Gohan_v1);
             r_icons.add(Icons.R_Gohan_v2);
             r_icons.add(Icons.R_Gohan_v3);

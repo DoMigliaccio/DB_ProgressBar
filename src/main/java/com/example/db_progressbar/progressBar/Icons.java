@@ -18,9 +18,9 @@ public interface Icons {
     ImageIcon L_Muten_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Muten_v1.gif"));
     ImageIcon L_Muten_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Muten_v2.png"));
     ImageIcon L_Crillin_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Crillin_v1.png"));
-
     ImageIcon L_Radish_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Radish_v1.png"));
     ImageIcon L_Tensing_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Tensing_v1.gif"));
+    ImageIcon L_Chiaotzu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Chiaotzu_v1.gif"));
 
 
     ImageIcon L_Vegeta_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Vegeta_v1.gif"));
@@ -31,6 +31,8 @@ public interface Icons {
     ImageIcon L_Vegeta_v6= new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Vegeta_v6.png"));
 
     ImageIcon L_Nappa_v1= new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Nappa_v1.gif"));
+    ImageIcon L_Saibaman_v1= new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Saibaman_v1.gif"));
+
 
     ImageIcon L_Gohan_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Gohan_v1.png"));
     ImageIcon L_Gohan_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Gohan_v2.gif"));
@@ -91,6 +93,7 @@ public interface Icons {
     ImageIcon R_Crillin_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Crillin_v1.png"));
     ImageIcon R_Radish_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Radish_v1.png"));
     ImageIcon R_Tensing_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Tensing_v1.png"));
+    ImageIcon R_Chiaotzu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Chiaotzu_v1.gif"));
 
     ImageIcon R_Vegeta_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Vegeta_v1.gif"));
     ImageIcon R_Vegeta_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Vegeta_v2.png"));
@@ -100,6 +103,7 @@ public interface Icons {
     ImageIcon R_Vegeta_v6 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Vegeta_v6.png"));
 
     ImageIcon R_Nappa_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Nappa_v1.png"));
+    ImageIcon R_Saibaman_v1= new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Saibaman_v1.gif"));
 
     ImageIcon R_Gohan_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Gohan_v1.png"));
     ImageIcon R_Gohan_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Gohan_v2.png"));

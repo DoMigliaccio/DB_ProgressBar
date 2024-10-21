@@ -6,7 +6,7 @@
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>DragonBall ProgressBar</name>
-    <version>3.2</version>
+    <version>3.2.1</version>
     <vendor email="" url="">Musto&amp;Migliaccio</vendor>
     <description><![CDATA[
         <strong>🌟🚀 "Unleash Your Coding Power with Dragonball-Inspired Progress Bars!" 🚀🌟</strong> <br>
@@ -27,6 +27,7 @@
       <em>&emsp;&emsp;&emsp;- Changed Vegeta base Sprite;</em> <br>
       <em>&emsp;&emsp;&emsp;- Fixed Vegeta God Sprite velocity;</em> <br>
       <em>&emsp;&emsp;&emsp;- Added Nappa, Super Sayan Gotenks, Vegito Base, Super Sayan Vegito, Buutenks, Goku Kid;</em> <br>
+      <em>• 3.2.1 - Little sprite pool update: Added Chiaotzu, Saibaman</em> <br>
     ]]>
     </change-notes>
 
