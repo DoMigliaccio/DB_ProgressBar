@@ -1,5 +1,6 @@
 package com.example.db_progressbar.progressBar;
 
+import com.example.db_progressbar.configuration.DragonBallProgressConfigurationComponent;
 import com.intellij.openapi.ui.GraphicsConfig;
 import com.intellij.ui.scale.JBUIScale;
 import com.intellij.util.ui.GraphicsUtil;
@@ -22,6 +23,7 @@ import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
@@ -37,8 +39,14 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     ImageIcon ondaR_Freezer = Icons.OndaRev_Freezer;
     ImageIcon ondaR_yellow = Icons.OndaRev_Yellow;
 
+    static Boolean isRandom = DragonBallProgressState.getInstance().getIsRandom();
 
-
+    int leftRandom;
+    String leftRandomPath;
+    int rightRandom;
+    String rightRandomPath;
+    //String[] SinsitraPrendiDaQui = {"Sprites//[LeftFighter]_Muten_v1.gif","Sprites//[LeftFighter]_Vegeta_v2.gif","Sprites//[LeftFighter]_Saibaman_v1.gif","Sprites//[LeftFighter]_C19_v1.png","Sprites//[LeftFighter]_Gotenks_v2.png"};
+    //String[] DestraPrendiDaQui = {"Sprites//[RightFighter]_Vegeta_v5.png","Sprites//[RightFighter]_Gohan_v3.png","Sprites//[RightFighter]_Junior_v1.gif","Sprites//[RightFighter]_Trunks_v1.png","Sprites//[RightFighter]_Goku_v1.gif"};
     public static final Color TRANSPARENT = new Color (0,0,0,0);
 
 
@@ -46,6 +54,9 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
     public DragonBallProgressBarUi(){
         //System.out.println("**Costruttore base **");
+        if(isRandom){
+            pickRandomIcon();
+        }
     }
 
 
@@ -53,6 +64,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     public static ComponentUI createUI(JComponent c) {
         //System.out.println("**DragonBallProgressBarUi.createUI**");
         c.setBorder(JBUI.Borders.empty().asUIResource());
+        System.out.println("DragonBallProgressBarUi -> createUI -> isRandom: "+isRandom);
+
         return new DragonBallProgressBarUi();
     }
 
@@ -151,15 +164,35 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         }
 
         //IconsSection
+
+
+        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> leftRandom: "+leftRandom);
+        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> rightRandom: "+rightRandom);
         var state = DragonBallProgressState.getInstance().getState();
 
-        ArrayList<ImageIcon> fighterOnda = generaOndaIco(state.getPathLeftIco());
+        ArrayList<ImageIcon> fighterOnda;
+        if(isRandom){
+            fighterOnda = generaOndaIco(leftRandomPath);
+        }else{
+            fighterOnda = generaOndaIco(state.getPathLeftIco());
+        }
+
 
         ImageIcon scaledIcon = velocity > 0 ? (fighterOnda.get(0)) : (fighterOnda.get(1));
         scaledIcon.paintIcon(progressBar, g, offset2 - JBUI.scale(16), -JBUI.scale(4));
 
+        if(isRandom){
+            DragonBallProgressState.getInstance().setPathLeftIco(leftRandomPath);
+            DragonBallProgressState.getInstance().setPathRightIco(rightRandomPath);
+            /*selectedIconLeft = generaIco(SinsitraPrendiDaQui[leftRandom], 'l');
+            selectedIconRight = generaIco(DestraPrendiDaQui[rightRandom], 'r');*/
+        }
+
         selectedIconLeft = generaIco(state.getPathLeftIco(), 'l');
         selectedIconRight = generaIco(state.getPathRightIco(), 'r');
+
+
+        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> isRandom: "+isRandom);
         if(state.getPathRightIco().contains("MajinBu_v1")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
         }else if(state.getPathRightIco().contains("Vegito_v2")){
@@ -230,6 +263,11 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
         //Icons Section
         try {
+            if(isRandom){
+                DragonBallProgressState.getInstance().setPathLeftIco(leftRandomPath);
+                DragonBallProgressState.getInstance().setPathRightIco(rightRandomPath);
+            }
+
             var state = DragonBallProgressState.getInstance().getState();
 
             //Expected -> Sprites//[LeftFighter]_MajinBu_v3.gif
@@ -239,6 +277,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
             selectedIconLeft = generaIco(state.getPathLeftIco(),'l');
             selectedIconRight = generaIco(state.getPathRightIco(),'r');
+            System.out.println("DragonBallProgressBarUi -> paintDeterminate -> isRandom: "+isRandom);
             if(state.getPathRightIco().contains("MajinBu_v1")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
             }else if(state.getPathRightIco().contains("Vegito_v2")){
@@ -254,6 +293,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
         config.restore();
     }
+
+
 
     private void paintString(Graphics g, int x, int y, int w, int h, int fillStart, int amountFull) {
         if (!(g instanceof Graphics2D)) {
@@ -287,7 +328,6 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         }
         g2.setClip(oldClip);
     }
-
 
     private static boolean isNotEven(int value) {
         return !(value % 2 == 0);
@@ -400,6 +440,141 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     //Un getter - setter dell'onda già nel 'State'
     //Deve seguire il giro del selectedLeft e SelectedRight
 
+    public void pickRandomIcon(){
+        Random rd = new Random();
+        ArrayList<ImageIcon> leftIconsImages = resourceLoader("l");
+        leftRandom = rd.nextInt(leftIconsImages.size());
+        ArrayList<ImageIcon> rightIconsImages =resourceLoader("r");
+        rightRandom = rd.nextInt(rightIconsImages.size());
 
+        String leftRandomPathFull = leftIconsImages.get(leftRandom).getDescription();
+        String tempLeftPath = leftRandomPathFull.split("/Sprites")[1];
+        leftRandomPath = "Sprites"+tempLeftPath;
+
+        String rightRandomPathFull = rightIconsImages.get(rightRandom).getDescription();
+        String tempRightPath = rightRandomPathFull.split("/Sprites")[1];
+        rightRandomPath = "Sprites"+tempRightPath;
+    }
+
+    public ArrayList<ImageIcon> resourceLoader(String type){
+        ArrayList<ImageIcon> l_icons = new ArrayList<>();
+        ArrayList<ImageIcon> r_icons = new ArrayList<>();
+
+        //String descriptor = selectedImageIcon.getDescription();
+        //TODO Resta da dare nel dbUI la lista delle stringhe coi path così poi facciamo set path con il randomize
+
+        if(type.equalsIgnoreCase("L")){
+            l_icons.add(Icons.L_Goku_v1);
+            l_icons.add(Icons.L_Goku_v2);
+            l_icons.add(Icons.L_Goku_v3);
+            l_icons.add(Icons.L_Goku_v4);
+            l_icons.add(Icons.L_Goku_v5);
+            l_icons.add(Icons.L_Goku_v6);
+            l_icons.add(Icons.L_Goku_v7);
+            l_icons.add(Icons.L_Goku_v8);
+            l_icons.add(Icons.L_Muten_v1);
+            l_icons.add(Icons.L_Muten_v2);
+            l_icons.add(Icons.L_Crillin_v1);
+            l_icons.add(Icons.L_Radish_v1);
+            l_icons.add(Icons.L_Tensing_v1);
+            l_icons.add(Icons.L_Chiaotzu_v1);
+            l_icons.add(Icons.L_Vegeta_v1);
+            l_icons.add(Icons.L_Vegeta_v2);
+            l_icons.add(Icons.L_Vegeta_v3);
+            l_icons.add(Icons.L_Vegeta_v4);
+            l_icons.add(Icons.L_Vegeta_v5);
+            l_icons.add(Icons.L_Vegeta_v6);
+            l_icons.add(Icons.L_Nappa_v1);
+            l_icons.add(Icons.L_Saibaman_v1);
+            l_icons.add(Icons.L_Gohan_v1);
+            l_icons.add(Icons.L_Gohan_v2);
+            l_icons.add(Icons.L_Gohan_v3);
+            l_icons.add(Icons.L_Gohan_v4);
+            l_icons.add(Icons.L_Junior_v1);
+            l_icons.add(Icons.L_Trunks_v1);
+            l_icons.add(Icons.L_Trunks_v2);
+            l_icons.add(Icons.L_Vegito_v1);
+            l_icons.add(Icons.L_Vegito_v2);
+            l_icons.add(Icons.L_Gotenks_v1);
+            l_icons.add(Icons.L_Gotenks_v2);
+            l_icons.add(Icons.L_Freezer_v1);
+            l_icons.add(Icons.L_Freezer_v2);
+            l_icons.add(Icons.L_Freezer_v3);
+            l_icons.add(Icons.L_C16_v1);
+            l_icons.add(Icons.L_C17_v1);
+            l_icons.add(Icons.L_C18_v1);
+            l_icons.add(Icons.L_C19_v1);
+            l_icons.add(Icons.L_C20_v1);
+            l_icons.add(Icons.L_Cell_v1);
+            l_icons.add(Icons.L_Cell_v2);
+            l_icons.add(Icons.L_MajinBu_v1);
+            l_icons.add(Icons.L_MajinBu_v2);
+            l_icons.add(Icons.L_MajinBu_v3);
+            l_icons.add(Icons.L_MajinBu_v4);
+            l_icons.add(Icons.L_MajinBu_v5);
+            l_icons.add(Icons.L_Hit_v1);
+            l_icons.add(Icons.L_Jiren_v1);
+            l_icons.add(Icons.L_Jiren_v2);
+            l_icons.add(Icons.L_Beerus_v1);
+            l_icons.add(Icons.L_Granolah_v1);
+            l_icons.add(Icons.L_Shenron_v1);
+
+        }else if (type.equalsIgnoreCase("R")){
+            r_icons.add(Icons.R_Goku_v1);
+            r_icons.add(Icons.R_Goku_v2);
+            r_icons.add(Icons.R_Goku_v3);
+            r_icons.add(Icons.R_Goku_v4);
+            r_icons.add(Icons.R_Goku_v5);
+            r_icons.add(Icons.R_Goku_v6);
+            r_icons.add(Icons.R_Goku_v7);
+            r_icons.add(Icons.R_Goku_v8);
+            r_icons.add(Icons.R_Muten_v1);
+            r_icons.add(Icons.R_Crillin_v1);
+            r_icons.add(Icons.R_Radish_v1);
+            r_icons.add(Icons.R_Tensing_v1);
+            r_icons.add(Icons.R_Chiaotzu_v1);
+            r_icons.add(Icons.R_Vegeta_v1);
+            r_icons.add(Icons.R_Vegeta_v2);
+            r_icons.add(Icons.R_Vegeta_v3);
+            r_icons.add(Icons.R_Vegeta_v4);
+            r_icons.add(Icons.R_Vegeta_v5);
+            r_icons.add(Icons.R_Vegeta_v6);
+            r_icons.add(Icons.R_Nappa_v1);
+            r_icons.add(Icons.R_Saibaman_v1);
+            r_icons.add(Icons.R_Gohan_v1);
+            r_icons.add(Icons.R_Gohan_v2);
+            r_icons.add(Icons.R_Gohan_v3);
+            r_icons.add(Icons.R_Junior_v1);
+            r_icons.add(Icons.R_Trunks_v1);
+            r_icons.add(Icons.R_Trunks_v2);
+            r_icons.add(Icons.R_Vegito_v1);
+            r_icons.add(Icons.R_Vegito_v2);
+            r_icons.add(Icons.R_Gotenks_v1);
+            r_icons.add(Icons.R_Gotenks_v2);
+            r_icons.add(Icons.R_Freezer_v1);
+            r_icons.add(Icons.R_Freezer_v2);
+            r_icons.add(Icons.R_Freezer_v3);
+            r_icons.add(Icons.R_C16_v1);
+            r_icons.add(Icons.R_C17_v1);
+            r_icons.add(Icons.R_C18_v1);
+            r_icons.add(Icons.R_C19_v1);
+            r_icons.add(Icons.R_C20_v1);
+            r_icons.add(Icons.R_Cell_v1);
+            r_icons.add(Icons.R_Cell_v2);
+            r_icons.add(Icons.R_MajinBu_v1);
+            r_icons.add(Icons.R_MajinBu_v2);
+            r_icons.add(Icons.R_MajinBu_v3);
+            r_icons.add(Icons.R_MajinBu_v4);
+            r_icons.add(Icons.R_MajinBu_v5);
+            r_icons.add(Icons.R_Hit_v1);
+            r_icons.add(Icons.R_Jiren_v1);
+            r_icons.add(Icons.R_Jiren_v2);
+            r_icons.add(Icons.R_Beerus_v1);
+            r_icons.add(Icons.R_Granolah_v1);
+            r_icons.add(Icons.R_Shenron_v1);
+        }
+
+        return (type.equalsIgnoreCase("r")?r_icons:l_icons);
+    }
 
 }

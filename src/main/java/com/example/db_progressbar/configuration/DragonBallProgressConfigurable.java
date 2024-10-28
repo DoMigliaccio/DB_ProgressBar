@@ -22,7 +22,7 @@ public class DragonBallProgressConfigurable implements Configurable {
     @Override
     public boolean isModified() {
         final DragonBallProgressState state = DragonBallProgressState.getInstance();
-        boolean isModified = ((component.getSelectedHeight()!= state.getHeight()) || component.getPathLeftIco() != state.getPathLeftIco() || component.getPathRightIco() != state.getPathRightIco());
+        boolean isModified = ((component.getSelectedHeight()!= state.getHeight()) || component.getPathLeftIco() != state.getPathLeftIco() || component.getPathRightIco() != state.getPathRightIco() || component.getSelectedRandom() != state.getIsRandom());
         return isModified;
     }
 
@@ -38,6 +38,10 @@ public class DragonBallProgressConfigurable implements Configurable {
 
         state.setPathLeftIco(component.getPathLeftIco());
         state.setPathRightIco(component.getPathRightIco());
+
+        state.setIsRandom(component.getSelectedRandom());
+        System.out.println("apply - component.getSelectedRandom(): "+component.getSelectedRandom());
+        System.out.println("apply - state.getSelectedRandom(): "+state.getIsRandom());
     }
 
     @Override
@@ -46,6 +50,7 @@ public class DragonBallProgressConfigurable implements Configurable {
         component.setSelectedHeight(state.getHeight());
         component.setPathLeftIco(state.getPathLeftIco());
         component.setPathRightIco(state.getPathRightIco());
+        component.setSelectedRandom(state.getIsRandom());
     }
 
 

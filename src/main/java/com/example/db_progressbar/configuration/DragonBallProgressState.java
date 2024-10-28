@@ -31,6 +31,7 @@ public class DragonBallProgressState implements PersistentStateComponent<DragonB
     private String pathOndaIco = Icons.basePath+"OndaGapEnanched.gif";
     private String pathOndaRevIco = Icons.basePath+"OndaGapREnanched.gif";
 
+    private Boolean isRandom = true;
 
     public DragonBallProgressState() {
     }
@@ -51,49 +52,6 @@ public class DragonBallProgressState implements PersistentStateComponent<DragonB
         this.pathRightIco = pathRightIco;
     }
 
-    /*public String getpathOndaIco() {
-        return pathOndaIco;
-    }
-
-    public void setpathOndaIco(String pathOndaIco) {
-        this.pathOndaIco = pathOndaIco;
-    }
-
-    public String getpathOndaRevIco() {
-        return pathOndaRevIco;
-    }
-
-    public void setpathOndaRevIco(String pathOndaRevIco) {
-        this.pathOndaRevIco = pathOndaRevIco;
-    }*/
-
-    //public String getTitoloTest() {
-    //    return titoloTest;
-    //}
-
-    //public void setTitoloTest(String titoloTest) {
-    //    this.titoloTest = titoloTest;
-    //}
-
-
-    //si usa per l'apply
-    /*
-    public ImageIcon getRightFighter() {
-        return rightFighter;
-    }
-
-    public void setRightFighter(ImageIcon rightFighter) {
-        this.rightFighter = rightFighter;
-    }
-
-    public ImageIcon getLeftFighter() {
-        return leftFighter;
-    }
-
-    public void setLeftFighter(ImageIcon leftFighter) {
-        this.leftFighter = leftFighter;
-    }
-    */
     public Integer getHeight() {
         return this.height;
     }
@@ -102,7 +60,13 @@ public class DragonBallProgressState implements PersistentStateComponent<DragonB
         this.height = height;
     }
 
+    public Boolean getIsRandom() {
+        return this.isRandom;
+    }
 
+    public void setIsRandom(Boolean random) {
+        this.isRandom = random;
+    }
 
     public static DragonBallProgressState getInstance() {
         try{

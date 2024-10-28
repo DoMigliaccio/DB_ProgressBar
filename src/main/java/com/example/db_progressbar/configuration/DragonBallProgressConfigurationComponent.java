@@ -36,6 +36,7 @@ public class DragonBallProgressConfigurationComponent {
     private String pathOndaRevIco;*/
 
     private int selectedHeight;
+    private boolean selectedRandom = DragonBallProgressState.getInstance().getIsRandom();
 
     int i = 0;
 
@@ -54,7 +55,7 @@ public class DragonBallProgressConfigurationComponent {
             e.printStackTrace();
             System.out.println(e.getMessage());
         }
-        createUi();
+        //createUi();
     }
 
     void createUi() {
@@ -63,12 +64,13 @@ public class DragonBallProgressConfigurationComponent {
         formBuilder.addComponent(createTitlePanel());
         formBuilder.addComponent(createPreviewPanel());
         formBuilder.addComponent(createHieghtPanel());
+        formBuilder.addComponent(createRandomizePanel());
 
         ArrayList<ImageIcon> Rfighters = resourceLoader("r");
         ArrayList<ImageIcon> Lfighters = resourceLoader("l");
 
-        //formBuilder.addComponent(createFighterSelectionPanel(Rfighters,Lfighters));
         formBuilder.addComponent(fighterPanelWithOptions(Rfighters,Lfighters));
+
         mainPanel = formBuilder.getPanel();
     }
 
@@ -135,6 +137,37 @@ public class DragonBallProgressConfigurationComponent {
         setSelectedHeight(sliderForHeight.getValue());
 
         return hieghtPanel;
+    }
+
+    private JPanel createRandomizePanel() {
+        final JPanel randomizePanel = new JPanel();
+        randomizePanel.setBorder(BorderFactory.createTitledBorder("[ Randomize Selection ]"));
+        randomizePanel.setLayout(new GridLayout(1,1));
+
+        JBCheckBox checkbox = new JBCheckBox();
+        checkbox.setText("Randomize");
+        checkbox.setSelected(this.selectedRandom);
+        checkbox.addItemListener(c -> {
+            if (c.getStateChange() == ItemEvent.SELECTED) {
+                setSelectedRandom(true);
+            } else if (c.getStateChange() == ItemEvent.DESELECTED) {
+                setSelectedRandom(false);
+            }
+        });
+        randomizePanel.add(checkbox, BorderLayout.WEST);
+        JLabel jlabel = new JLabel("If true, the selections in the next section becomes irrelevant.");
+        JLabel jlabel2 = new JLabel("The effect of this checkbox will take place in the next IDE run.");
+        JPanel labelPanelContainer = new JPanel();
+        labelPanelContainer.setLayout(new BoxLayout(labelPanelContainer, BoxLayout.Y_AXIS));
+        labelPanelContainer.add(jlabel);
+        labelPanelContainer.add(jlabel2);
+
+        randomizePanel.add(labelPanelContainer, BorderLayout.CENTER);
+        //TODO Add Randomize only left - randomize only right
+        // quindi questo diventa un radio button group
+        // spostare metodo getResources in un'apposita classe
+        // aggiungere logica dove se i pcik hanno la stessa radice, riprovare il pick
+        return randomizePanel;
     }
 
 
@@ -264,6 +297,8 @@ public class DragonBallProgressConfigurationComponent {
                         System.out.println("Solo Bottone");
                         ImageIcon singleOption = iconList.get(0);
                         String singleOptionDescription = singleOption.getDescription();
+                        System.out.println("singleOptionDescription: "+singleOptionDescription);
+                        System.out.println("Icon.getDescription: "+Icons.L_Beerus_v1.getDescription());
                         JRadioButtonMenuItem jbutton = new JRadioButtonMenuItem(null,singleOption);
                         if(currentSelected.getDescription() == singleOptionDescription){
                             jbutton.setSelected(true);
@@ -316,9 +351,12 @@ public class DragonBallProgressConfigurationComponent {
         return mainPanel;
     }
 
-    ArrayList<ImageIcon> resourceLoader(String type){
+    public ArrayList<ImageIcon> resourceLoader(String type){
         ArrayList<ImageIcon> l_icons = new ArrayList<>();
         ArrayList<ImageIcon> r_icons = new ArrayList<>();
+
+        //String descriptor = selectedImageIcon.getDescription();
+        //TODO Resta da dare nel dbUI la lista delle stringhe coi path così poi facciamo set path con il randomize
 
         if(type.equalsIgnoreCase("L")){
             l_icons.add(Icons.L_Goku_v1);
@@ -480,5 +518,13 @@ public class DragonBallProgressConfigurationComponent {
 
     public void setPathRightIco(String pathRightIco) {
         this.pathRightIco = pathRightIco;
+    }
+
+    public Boolean getSelectedRandom() {
+        return selectedRandom;
+    }
+
+    public void setSelectedRandom(Boolean value) {
+        this.selectedRandom = value;
     }
 }
