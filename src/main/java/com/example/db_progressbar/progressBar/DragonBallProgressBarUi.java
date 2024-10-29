@@ -40,6 +40,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     ImageIcon ondaR_yellow = Icons.OndaRev_Yellow;
 
     static Boolean isRandom = DragonBallProgressState.getInstance().getIsRandom();
+    static String typeOfRandom = DragonBallProgressState.getInstance().getTypeOfRandom();
 
     int leftRandom;
     String leftRandomPath;
@@ -54,7 +55,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
     public DragonBallProgressBarUi(){
         //System.out.println("**Costruttore base **");
-        if(isRandom){
+        if(!typeOfRandom.equalsIgnoreCase("NONE")){
             pickRandomIcon();
         }
     }
@@ -64,7 +65,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     public static ComponentUI createUI(JComponent c) {
         //System.out.println("**DragonBallProgressBarUi.createUI**");
         c.setBorder(JBUI.Borders.empty().asUIResource());
-        System.out.println("DragonBallProgressBarUi -> createUI -> isRandom: "+isRandom);
+        //System.out.println("DragonBallProgressBarUi -> createUI -> isRandom: "+isRandom);
 
         return new DragonBallProgressBarUi();
     }
@@ -166,8 +167,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         //IconsSection
 
 
-        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> leftRandom: "+leftRandom);
-        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> rightRandom: "+rightRandom);
+        //System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> leftRandom: "+leftRandom);
+        //System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> rightRandom: "+rightRandom);
         var state = DragonBallProgressState.getInstance().getState();
 
         ArrayList<ImageIcon> fighterOnda;
@@ -192,7 +193,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         selectedIconRight = generaIco(state.getPathRightIco(), 'r');
 
 
-        System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> isRandom: "+isRandom);
+        //System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> isRandom: "+isRandom);
         if(state.getPathRightIco().contains("MajinBu_v1")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
         }else if(state.getPathRightIco().contains("Vegito_v2")){
@@ -277,7 +278,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
             selectedIconLeft = generaIco(state.getPathLeftIco(),'l');
             selectedIconRight = generaIco(state.getPathRightIco(),'r');
-            System.out.println("DragonBallProgressBarUi -> paintDeterminate -> isRandom: "+isRandom);
+            //System.out.println("DragonBallProgressBarUi -> paintDeterminate -> isRandom: "+isRandom);
             if(state.getPathRightIco().contains("MajinBu_v1")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
             }else if(state.getPathRightIco().contains("Vegito_v2")){

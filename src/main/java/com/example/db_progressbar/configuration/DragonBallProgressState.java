@@ -32,6 +32,7 @@ public class DragonBallProgressState implements PersistentStateComponent<DragonB
     private String pathOndaRevIco = Icons.basePath+"OndaGapREnanched.gif";
 
     private Boolean isRandom = true;
+    private String typeOfRandom = "NONE";
 
     public DragonBallProgressState() {
     }
@@ -64,9 +65,19 @@ public class DragonBallProgressState implements PersistentStateComponent<DragonB
         return this.isRandom;
     }
 
+    public String getTypeOfRandom() {
+        return this.typeOfRandom;
+    }
+
+    public void setTypeOfRandom(String type) {
+        this.typeOfRandom = type;
+    }
+
     public void setIsRandom(Boolean random) {
         this.isRandom = random;
     }
+
+
 
     public static DragonBallProgressState getInstance() {
         try{

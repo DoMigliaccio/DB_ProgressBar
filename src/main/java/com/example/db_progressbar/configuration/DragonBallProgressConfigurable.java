@@ -22,7 +22,11 @@ public class DragonBallProgressConfigurable implements Configurable {
     @Override
     public boolean isModified() {
         final DragonBallProgressState state = DragonBallProgressState.getInstance();
-        boolean isModified = ((component.getSelectedHeight()!= state.getHeight()) || component.getPathLeftIco() != state.getPathLeftIco() || component.getPathRightIco() != state.getPathRightIco() || component.getSelectedRandom() != state.getIsRandom());
+        boolean isModified = ((component.getSelectedHeight()!= state.getHeight()) ||
+                component.getPathLeftIco() != state.getPathLeftIco() ||
+                component.getPathRightIco() != state.getPathRightIco() ||
+                component.getSelectedRandom() != state.getIsRandom() ||
+                component.getTypeOfRandom() != state.getTypeOfRandom());
         return isModified;
     }
 
@@ -40,8 +44,9 @@ public class DragonBallProgressConfigurable implements Configurable {
         state.setPathRightIco(component.getPathRightIco());
 
         state.setIsRandom(component.getSelectedRandom());
-        System.out.println("apply - component.getSelectedRandom(): "+component.getSelectedRandom());
-        System.out.println("apply - state.getSelectedRandom(): "+state.getIsRandom());
+        state.setTypeOfRandom(component.getTypeOfRandom());
+        System.out.println("apply - component.getTypeOfRandom(): "+component.getTypeOfRandom());
+        System.out.println("apply - state.getTypeOfRandom(): "+state.getTypeOfRandom());
     }
 
     @Override
