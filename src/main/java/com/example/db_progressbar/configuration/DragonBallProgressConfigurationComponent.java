@@ -176,7 +176,6 @@ public class DragonBallProgressConfigurationComponent {
         radioButton1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hai selezionato: both");
                 setTypeOfRandom("BOTH");
             }
         });
@@ -184,7 +183,6 @@ public class DragonBallProgressConfigurationComponent {
         radioButton2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hai selezionato: left");
                 setTypeOfRandom("LEFT");
             }
         });
@@ -192,32 +190,17 @@ public class DragonBallProgressConfigurationComponent {
         radioButton3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hai selezionato: right");
                 setTypeOfRandom("RIGHT");
             }
         });
 
-        radioButton3.addActionListener(new ActionListener() {
+        radioButton4.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("Hai selezionato: NONE");
                 setTypeOfRandom("NONE");
             }
         });
 
-
-        /*JBCheckBox checkbox = new JBCheckBox();
-        checkbox.setText("Randomize");
-        checkbox.setSelected(this.selectedRandom);
-        checkbox.addItemListener(c -> {
-            if (c.getStateChange() == ItemEvent.SELECTED) {
-                setSelectedRandom(true);
-            } else if (c.getStateChange() == ItemEvent.DESELECTED) {
-                setSelectedRandom(false);
-            }
-        });*/
-        //randomizePanel.add(checkbox, BorderLayout.WEST);
-        //JLabel jlabel = new JLabel("If true, the selections in the next section becomes irrelevant.");
         JLabel jlabel2 = new JLabel("The effect of this selection will take place in the next IDE run.");
         JPanel labelPanelContainer = new JPanel();
         labelPanelContainer.setLayout(new BoxLayout(labelPanelContainer, BoxLayout.Y_AXIS));
@@ -225,8 +208,6 @@ public class DragonBallProgressConfigurationComponent {
         labelPanelContainer.add(jlabel2);
 
         randomizePanel.add(labelPanelContainer, BorderLayout.CENTER);
-        //TODO Add Randomize only left - randomize only right
-        // quindi questo diventa un radio button group
         // spostare metodo getResources in un'apposita classe
         // aggiungere logica dove se i pcik hanno la stessa radice, riprovare il pick
         return randomizePanel;
