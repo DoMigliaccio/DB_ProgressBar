@@ -6,7 +6,7 @@
     <!-- Public plugin name should be written in Title Case.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>DragonBall ProgressBar</name>
-    <version>3.2.1</version>
+    <version>3.3</version>
     <vendor email="" url="">Musto&amp;Migliaccio</vendor>
     <description><![CDATA[
         <strong>🌟🚀 "Unleash Your Coding Power with Dragonball-Inspired Progress Bars!" 🚀🌟</strong> <br>
@@ -19,15 +19,24 @@
         Inspired by 'Hadouken Progress Bar'.
   ]]></description>
     <change-notes><![CDATA[
-      <em>• 3.1.1 - Extended compatibility Range, minor fix.</em> <br>
-      <em>• 3.1.2 - Minor fix: Added MessageDialog after fighter selection.</em> <br>
-      <em>• 3.1.4 - Fix compatibility build 2024.</em> <br>
-      <em>• 3.2 - Rebrand PluginIcon;</em> <br>
-      <em>&emsp;&emsp;- Sprite pool updated:</em> <br>
-      <em>&emsp;&emsp;&emsp;- Changed Vegeta base Sprite;</em> <br>
-      <em>&emsp;&emsp;&emsp;- Fixed Vegeta God Sprite velocity;</em> <br>
-      <em>&emsp;&emsp;&emsp;- Added Nappa, Super Sayan Gotenks, Vegito Base, Super Sayan Vegito, Buutenks, Goku Kid;</em> <br>
-      <em>• 3.2.1 - Little sprite pool update: Added Chiaotzu, Saibaman</em> <br>
+      <strong>Version 3.1.1<br></strong>
+      • Extended compatibility Range, minor fix.<br>
+      <strong>Version 3.1.2 <br></strong>
+      • Minor fix: Added MessageDialog after fighter selection.<br>
+      <strong>Version 3.1.4 <br></strong>
+      • Fix compatibility build 2024.<br>
+      <strong>Version 3.2 <br></strong>
+      • Rebrand PluginIcon;<br>
+      • Sprite pool updated: <br>
+      -- Changed Vegeta base Sprite;<br>
+      -- Fixed Vegeta God Sprite velocity;<br>
+      -- Added Nappa, Super Sayan Gotenks, Vegito Base, Super Sayan Vegito, Buutenks, Goku Kid;<br>
+      <strong>Version 3.2.1<br></strong>
+      • Little sprite pool update: Added Chiaotzu, Saibaman.<br>
+      <strong>Version 3.3<br></strong>
+      • Added randomize functionality: you can now choose to randomize fighters. One on each side or both!<br>
+	  • Sprite pool update: added Jamcha.<br>
+      • Reworked some sprites: Vegeta Ultra Ego, MajinBu, Kid Bu, Trunks, Tenshinhan, Jiren, Goku Kaioken.<br>
     ]]>
     </change-notes>
 

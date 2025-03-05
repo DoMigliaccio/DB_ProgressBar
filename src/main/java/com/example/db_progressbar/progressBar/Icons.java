@@ -81,7 +81,7 @@ public interface Icons {
     // _L - End
     // _R - Start
     ImageIcon R_Goku_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v1.gif"));
-    ImageIcon R_Goku_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v2.png"));
+    ImageIcon R_Goku_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v2.gif"));
     ImageIcon R_Goku_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v3.gif"));
     ImageIcon R_Goku_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v4.png"));
     ImageIcon R_Goku_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Goku_v5.gif"));

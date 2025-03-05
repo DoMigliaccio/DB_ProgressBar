@@ -27,6 +27,8 @@ import java.util.Random;
 
 public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
+    private DragonBallProgressState stateUsedInRandom = DragonBallProgressState.getInstance().getState();
+
     ImageIcon selectedIconLeft;
     ImageIcon selectedIconRight;
 
@@ -383,8 +385,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         ArrayList<ImageIcon> ondaIconList = new ArrayList<ImageIcon>();
         try{
 
-            if(leftFighterName.contains("Vegeta_v5") ||
-                    leftFighterName.contains("Trunks_v1")||
+            if(leftFighterName.contains("Trunks_v1")||
                     leftFighterName.contains("C19_v1")||
                     leftFighterName.contains("C20_v1")||
                     leftFighterName.contains("Radish_v1")||
@@ -411,7 +412,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                 ondaIconList.add(Icons.Onda_Freezer);
                 ondaIconList.add(Icons.OndaRev_Freezer);
 
-            }else if(leftFighterName.contains("Vegeta_v4")){
+            }else if(leftFighterName.contains("Vegeta_v5") ||
+                        leftFighterName.contains("Vegeta_v4")){
                 ondaIconList.add(Icons.Onda_Purple);
                 ondaIconList.add(Icons.OndaRev_Purple);
 
@@ -467,37 +469,59 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
         //Gestire Types of Randomization
         ArrayList<ImageIcon> leftIconsImages;
         ArrayList<ImageIcon> rightIconsImages;
+
         if(typeOfRandom.equalsIgnoreCase("BOTH")){
-            //LEFT
             leftIconsImages = resourceLoader("l");
-            String leftRandomPathFull = leftIconsImages.get(generateRandomIndex(leftIconsImages.size())).getDescription();
-            String tempLeftPath = leftRandomPathFull.split("/Sprites")[1];
+            rightIconsImages =resourceLoader("r");
+            String leftRandomPathFull;
+            String tempLeftPath;
+
+            String rightRandomPathFull;
+            String tempRightPath;
+            do{
+                leftRandomPathFull = leftIconsImages.get(generateRandomIndex(leftIconsImages.size())).getDescription();
+                tempLeftPath = leftRandomPathFull.split("/Sprites")[1];
+
+                rightRandomPathFull = rightIconsImages.get(generateRandomIndex(rightIconsImages.size())).getDescription();
+                tempRightPath = rightRandomPathFull.split("/Sprites")[1];
+            }while (checkDuplicatePick(tempLeftPath,tempRightPath));
+            //LEFT
             leftRandomPath = "Sprites"+tempLeftPath;
 
             //RIGHT
-            rightIconsImages =resourceLoader("r");
-            String rightRandomPathFull = rightIconsImages.get(generateRandomIndex(rightIconsImages.size())).getDescription();
-            String tempRightPath = rightRandomPathFull.split("/Sprites")[1];
             rightRandomPath = "Sprites"+tempRightPath;
 
         }else if(typeOfRandom.equalsIgnoreCase("LEFT")){
-            //LEFT
+            String rightPath = stateUsedInRandom.getPathRightIco();
+            System.out.println("pickRandomIcon - leftPath from State: "+rightPath);
             leftIconsImages = resourceLoader("l");
-            String leftRandomPathFull = leftIconsImages.get(generateRandomIndex(leftIconsImages.size())).getDescription();
-            String tempLeftPath = leftRandomPathFull.split("/Sprites")[1];
+            String leftRandomPathFull;
+            String tempLeftPath;
+            do{
+                leftRandomPathFull = leftIconsImages.get(generateRandomIndex(leftIconsImages.size())).getDescription();
+                tempLeftPath = leftRandomPathFull.split("/Sprites")[1];
+            }while(checkDuplicatePick(tempLeftPath,rightPath));
+            //LEFT
             leftRandomPath = "Sprites"+tempLeftPath;
-
 
         }else if(typeOfRandom.equalsIgnoreCase("RIGHT")){
             //RIGHT
             rightIconsImages =resourceLoader("r");
-            String rightRandomPathFull = rightIconsImages.get(generateRandomIndex(rightIconsImages.size())).getDescription();
-            String tempRightPath = rightRandomPathFull.split("/Sprites")[1];
+            String rightRandomPathFull;
+            String tempRightPath;
+            String leftPath = stateUsedInRandom.getPathLeftIco();
+            System.out.println("pickRandomIcon - leftPath from State: "+leftPath);
+            do{
+                rightRandomPathFull = rightIconsImages.get(generateRandomIndex(rightIconsImages.size())).getDescription();
+                tempRightPath = rightRandomPathFull.split("/Sprites")[1];
+            }while(checkDuplicatePick(leftPath,tempRightPath));
+
             rightRandomPath = "Sprites"+tempRightPath;
         }
-        /*System.out.println("pickRandomIcon - typeOfRandom: "+typeOfRandom);
+
+        System.out.println("pickRandomIcon - typeOfRandom: "+typeOfRandom);
         System.out.println("pickRandomIcon - leftRandomPath: "+leftRandomPath);
-        System.out.println("pickRandomIcon - rightRandomPath: "+rightRandomPath);*/
+        System.out.println("pickRandomIcon - rightRandomPath: "+rightRandomPath);
 
     }
 
@@ -508,6 +532,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
     private boolean checkDuplicatePick(String leftPick, String rightPick ){
         //left pick sarà [LeftFighter]_C16_v1.gif
+        System.out.println("checkDuplicatePick - leftPick: "+leftPick);
+        System.out.println("checkDuplicatePick - rightPick: "+rightPick);
         String charachter = leftPick.split("_")[1];
         return rightPick.contains(charachter);
     }
