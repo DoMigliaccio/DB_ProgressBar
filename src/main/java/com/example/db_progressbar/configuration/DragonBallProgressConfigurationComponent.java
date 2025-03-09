@@ -44,7 +44,7 @@ public class DragonBallProgressConfigurationComponent {
     ButtonGroup buttonGroup_LF = new ButtonGroup();
     ButtonGroup buttonGroup_RF = new ButtonGroup();
 
-    String[] orderCriteria = {"Goku","Muten","Crillin","Radish","Tensing","Chiaotzu","Vegeta","Nappa","Saibaman","Gohan","Junior",
+    String[] orderCriteria = {"Goku","Muten","Crillin","Yamcha","Radish","Tensing","Chiaotzu","Vegeta","Nappa","Saibaman","Gohan","Junior",
             "Freezer","Trunks","C19","C20","C16","C17","C18","Cell","Vegito","Gotenks","MajinBu","Hit","Jiren",
             "Beerus","Granolah", "Shenron"};
 
@@ -413,6 +413,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Muten_v1);
             l_icons.add(Icons.L_Muten_v2);
             l_icons.add(Icons.L_Crillin_v1);
+            l_icons.add(Icons.L_Yamcha_v1);
             l_icons.add(Icons.L_Radish_v1);
             l_icons.add(Icons.L_Tensing_v1);
             l_icons.add(Icons.L_Chiaotzu_v1);
@@ -450,6 +451,7 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_MajinBu_v3);
             l_icons.add(Icons.L_MajinBu_v4);
             l_icons.add(Icons.L_MajinBu_v5);
+            l_icons.add(Icons.L_MajinBu_v6);
             l_icons.add(Icons.L_Hit_v1);
             l_icons.add(Icons.L_Jiren_v1);
             l_icons.add(Icons.L_Jiren_v2);
@@ -468,6 +470,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Goku_v8);
             r_icons.add(Icons.R_Muten_v1);
             r_icons.add(Icons.R_Crillin_v1);
+            r_icons.add(Icons.R_Yamcha_v1);
             r_icons.add(Icons.R_Radish_v1);
             r_icons.add(Icons.R_Tensing_v1);
             r_icons.add(Icons.R_Chiaotzu_v1);
@@ -504,6 +507,7 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_MajinBu_v3);
             r_icons.add(Icons.R_MajinBu_v4);
             r_icons.add(Icons.R_MajinBu_v5);
+            r_icons.add(Icons.R_MajinBu_v6);
             r_icons.add(Icons.R_Hit_v1);
             r_icons.add(Icons.R_Jiren_v1);
             r_icons.add(Icons.R_Jiren_v2);

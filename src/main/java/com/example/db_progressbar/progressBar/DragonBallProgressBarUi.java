@@ -202,7 +202,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
 
         //System.out.println("DragonBallProgressBarUi -> paintIndeterminate -> isRandom: "+isRandom);
-        if(state.getPathRightIco().contains("MajinBu_v1")){
+        if(state.getPathRightIco().contains("MajinBu_v2")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
         }else if(state.getPathRightIco().contains("Vegito_v2")){
             selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(35), -2);
@@ -303,7 +303,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
             selectedIconLeft = generaIco(state.getPathLeftIco(),'l');
             selectedIconRight = generaIco(state.getPathRightIco(),'r');
             //System.out.println("DragonBallProgressBarUi -> paintDeterminate -> isRandom: "+isRandom);
-            if(state.getPathRightIco().contains("MajinBu_v1")){
+            if(state.getPathRightIco().contains("MajinBu_v2")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(58), -2);
             }else if(state.getPathRightIco().contains("Vegito_v2")){
                 selectedIconRight.paintIcon(progressBar, g, barRectWidth - JBUI.scale(35), -2);
@@ -406,7 +406,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                 ondaIconList.add(Icons.OndaRev_Red);
 
             }else if(leftFighterName.contains("Freezer") ||
-                        leftFighterName.contains("MajinBu_v2")||
+                        leftFighterName.contains("MajinBu_v1")||
+                        leftFighterName.contains("MajinBu_v3")||
                         leftFighterName.contains("MajinBu_v5")||
                         leftFighterName.contains("Shenron_v1")){
                 ondaIconList.add(Icons.Onda_Freezer);
@@ -425,7 +426,7 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                 ondaIconList.add(Icons.Onda_Green);
                 ondaIconList.add(Icons.OndaRev_Green);
 
-            }else if(leftFighterName.contains("MajinBu_v1")){
+            }else if(leftFighterName.contains("MajinBu_v2")){
                 ondaIconList.add(Icons.Onda_Raggio);
                 ondaIconList.add(Icons.OndaRev_Empty);
 

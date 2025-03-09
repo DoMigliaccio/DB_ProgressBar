@@ -18,6 +18,7 @@ public interface Icons {
     ImageIcon L_Muten_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Muten_v1.gif"));
     ImageIcon L_Muten_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Muten_v2.png"));
     ImageIcon L_Crillin_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Crillin_v1.png"));
+    ImageIcon L_Yamcha_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Yamcha_v1.png"));
     ImageIcon L_Radish_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Radish_v1.png"));
     ImageIcon L_Tensing_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Tensing_v1.gif"));
     ImageIcon L_Chiaotzu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Chiaotzu_v1.gif"));
@@ -66,9 +67,10 @@ public interface Icons {
 
     ImageIcon L_MajinBu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v1.gif"));
     ImageIcon L_MajinBu_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v2.gif"));
-    ImageIcon L_MajinBu_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v3.png"));
+    ImageIcon L_MajinBu_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v3.gif"));
     ImageIcon L_MajinBu_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v4.png"));
-    ImageIcon L_MajinBu_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v5.gif"));
+    ImageIcon L_MajinBu_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v5.png"));
+    ImageIcon L_MajinBu_v6 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_MajinBu_v6.gif"));
 
     ImageIcon L_Hit_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Hit_v1.png"));
 
@@ -91,6 +93,7 @@ public interface Icons {
 
     ImageIcon R_Muten_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Muten_v1.png"));
     ImageIcon R_Crillin_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Crillin_v1.png"));
+    ImageIcon R_Yamcha_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Yamcha_v1.png"));
     ImageIcon R_Radish_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Radish_v1.png"));
     ImageIcon R_Tensing_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Tensing_v1.png"));
     ImageIcon R_Chiaotzu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Chiaotzu_v1.gif"));
@@ -134,10 +137,11 @@ public interface Icons {
     ImageIcon R_Gotenks_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Gotenks_v2.png"));
 
     ImageIcon R_MajinBu_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v1.gif"));
-	ImageIcon R_MajinBu_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v2.png"));
+	ImageIcon R_MajinBu_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v2.gif"));
 	ImageIcon R_MajinBu_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v3.png"));
-    ImageIcon R_MajinBu_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v4.gif"));
-    ImageIcon R_MajinBu_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v5.png"));
+    ImageIcon R_MajinBu_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v4.png"));
+    ImageIcon R_MajinBu_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v5.gif"));
+    ImageIcon R_MajinBu_v6 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_MajinBu_v6.png"));
 
     ImageIcon R_Hit_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Hit_v1.gif"));
 	
