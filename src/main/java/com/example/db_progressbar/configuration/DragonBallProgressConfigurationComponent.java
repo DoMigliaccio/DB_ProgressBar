@@ -44,7 +44,7 @@ public class DragonBallProgressConfigurationComponent {
     ButtonGroup buttonGroup_LF = new ButtonGroup();
     ButtonGroup buttonGroup_RF = new ButtonGroup();
 
-    String[] orderCriteria = {"Goku","Muten","Crillin","Yamcha","Radish","Tensing","Chiaotzu","Vegeta","Nappa","Saibaman","Gohan","Junior",
+    String[] orderCriteria = {"Goku","Muten","Crillin","Yamcha","Radish","Tensing","Chiaotzu","Vegeta","Nappa","Saibaman","Gohan","Junior","GinewSquad",
             "Freezer","Trunks","C19","C20","C16","C17","C18","Cell","Vegito","Gotenks","MajinBu","Hit","Jiren",
             "Beerus","Granolah", "Shenron"};
 
@@ -278,8 +278,10 @@ public class DragonBallProgressConfigurationComponent {
         Map<String, ArrayList<ImageIcon>> mapFighterVersions = new HashMap<>();
 
         for (ImageIcon ic : iconList) {
+            System.out.println("ic.getDescription().split(Icons.basePath)[1]: "+ic.getDescription().split(Icons.basePath)[1]);
+            System.out.println("ic.getDescription(): "+ic.getDescription());
             String iconNameTemp = ic.getDescription().split(Icons.basePath)[1]; //dovrei avere il nome del fighter
-            String iconName = iconNameTemp.split("_")[1]; //dovrei avere il nome del fighter
+            String iconName = iconNameTemp.split("_")[1];
                 System.out.println("organizeIcons - iconName Found: "+iconName);
                 if(mapFighterVersions.containsKey(iconName)){
                     //duplicato -> altra versione
@@ -313,7 +315,10 @@ public class DragonBallProgressConfigurationComponent {
                         showOptionPanel.setLayout(new BoxLayout(showOptionPanel,BoxLayout.Y_AXIS));
                         showOptionPanel.setBorder(BorderFactory.createTitledBorder("[ Fighter Versions ]"));
                         showOptionPanel.setVisible(false);
-                        JButton openPanelButton = new JButton("",iconList.get(0));
+                        JButton openPanelButton = openPanelButton = new JButton("",iconList.get(0));;
+                        if(key.equalsIgnoreCase("GinewSquad")){
+                            openPanelButton.setIcon(Icons.GroupIcon_GinewSquad);
+                        }
                         organizedPanel.add(openPanelButton);
                         for(ImageIcon ic : iconList){
                             JRadioButtonMenuItem jbutton = new JRadioButtonMenuItem(null,ic);
@@ -436,6 +441,11 @@ public class DragonBallProgressConfigurationComponent {
             l_icons.add(Icons.L_Vegito_v2);
             l_icons.add(Icons.L_Gotenks_v1);
             l_icons.add(Icons.L_Gotenks_v2);
+            l_icons.add(Icons.L_GinewSquad_v1);
+            l_icons.add(Icons.L_GinewSquad_v2);
+            l_icons.add(Icons.L_GinewSquad_v3);
+            l_icons.add(Icons.L_GinewSquad_v4);
+            l_icons.add(Icons.L_GinewSquad_v5);
             l_icons.add(Icons.L_Freezer_v1);
             l_icons.add(Icons.L_Freezer_v2);
             l_icons.add(Icons.L_Freezer_v3);
@@ -492,6 +502,11 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Vegito_v2);
             r_icons.add(Icons.R_Gotenks_v1);
             r_icons.add(Icons.R_Gotenks_v2);
+            r_icons.add(Icons.R_GinewSquad_v1);
+            r_icons.add(Icons.R_GinewSquad_v2);
+            r_icons.add(Icons.R_GinewSquad_v3);
+            r_icons.add(Icons.R_GinewSquad_v4);
+            r_icons.add(Icons.R_GinewSquad_v5);
             r_icons.add(Icons.R_Freezer_v1);
             r_icons.add(Icons.R_Freezer_v2);
             r_icons.add(Icons.R_Freezer_v3);
@@ -514,6 +529,8 @@ public class DragonBallProgressConfigurationComponent {
             r_icons.add(Icons.R_Beerus_v1);
             r_icons.add(Icons.R_Granolah_v1);
             r_icons.add(Icons.R_Shenron_v1);
+            r_icons.add(Icons.R_Shenron_v1);
+
         }
 
         return (type.equalsIgnoreCase("r")?r_icons:l_icons);

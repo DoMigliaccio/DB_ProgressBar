@@ -27,7 +27,7 @@ import java.util.Random;
 
 public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
-    private DragonBallProgressState stateUsedInRandom = DragonBallProgressState.getInstance().getState();
+    //private DragonBallProgressState stateUsedInRandom = DragonBallProgressState.getInstance().getState();
 
     ImageIcon selectedIconLeft;
     ImageIcon selectedIconRight;
@@ -41,8 +41,8 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
     ImageIcon ondaR_Freezer = Icons.OndaRev_Freezer;
     ImageIcon ondaR_yellow = Icons.OndaRev_Yellow;
 
-    static Boolean isRandom = DragonBallProgressState.getInstance().getIsRandom();
-    static String typeOfRandom = DragonBallProgressState.getInstance().getTypeOfRandom();
+    //static Boolean isRandom = DragonBallProgressState.getInstance().getIsRandom();
+    //static String typeOfRandom = DragonBallProgressState.getInstance().getTypeOfRandom();
 
     int leftRandom;
     String leftRandomPath;
@@ -55,8 +55,17 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
 
     int i = 0;
 
+    private DragonBallProgressState stateUsedInRandom;
+    private Boolean isRandom;
+    private String typeOfRandom;
+
     public DragonBallProgressBarUi(){
-        //System.out.println("**Costruttore base **");
+        // Recupera i valori dinamicamente nel costruttore
+        DragonBallProgressState state = DragonBallProgressState.getInstance();
+        this.stateUsedInRandom = state.getState();
+        this.isRandom = state.getIsRandom();
+        this.typeOfRandom = state.getTypeOfRandom();
+
         if(!typeOfRandom.equalsIgnoreCase("NONE")){
             pickRandomIcon();
         }
@@ -393,6 +402,10 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                     leftFighterName.contains("Nappa_v1")||
                     leftFighterName.contains("Chiaotzu_v1")||
                     leftFighterName.contains("Saibaman_v1")||
+                    leftFighterName.contains("GinewSquad_v2")||
+                    leftFighterName.contains("GinewSquad_v3")||
+                    leftFighterName.contains("GinewSquad_v4")||
+                    leftFighterName.contains("GinewSquad_v5")||
                     leftFighterName.contains("Tensing_v1")){
                 ondaIconList.add(Icons.Onda_Yellow);
                 ondaIconList.add(Icons.OndaRev_Yellow);
@@ -435,6 +448,9 @@ public class DragonBallProgressBarUi extends BasicProgressBarUI {
                 ondaIconList.add(Icons.OndaRev_Empty);
             }else if(leftFighterName.contains("Junior_v1")){
                 ondaIconList.add(Icons.Onda_Junior);
+                ondaIconList.add(Icons.OndaRev_Empty);
+            }else if(leftFighterName.contains("GinewSquad_v1")){
+                ondaIconList.add(Icons.Onda_Guldo);
                 ondaIconList.add(Icons.OndaRev_Empty);
             }else{
                 ondaIconList.add(Icons.Onda);

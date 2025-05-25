@@ -44,6 +44,11 @@ public interface Icons {
     ImageIcon L_Trunks_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Trunks_v1.gif"));
     ImageIcon L_Trunks_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Trunks_v2.png"));
 
+    ImageIcon L_GinewSquad_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_GinewSquad_v1.gif"));
+    ImageIcon L_GinewSquad_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_GinewSquad_v2.png"));
+    ImageIcon L_GinewSquad_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_GinewSquad_v3.png"));
+    ImageIcon L_GinewSquad_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_GinewSquad_v4.gif"));
+    ImageIcon L_GinewSquad_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_GinewSquad_v5.gif"));
 
     ImageIcon L_Freezer_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Freezer_v1.png"));
     ImageIcon L_Freezer_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[LeftFighter]_Freezer_v2.png"));
@@ -117,6 +122,12 @@ public interface Icons {
 	ImageIcon R_Trunks_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Trunks_v1.png"));
 	ImageIcon R_Trunks_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Trunks_v2.png"));
 
+    ImageIcon R_GinewSquad_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_GinewSquad_v1.png"));
+    ImageIcon R_GinewSquad_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_GinewSquad_v2.gif"));
+    ImageIcon R_GinewSquad_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_GinewSquad_v3.png"));
+    ImageIcon R_GinewSquad_v4 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_GinewSquad_v4.gif"));
+    ImageIcon R_GinewSquad_v5 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_GinewSquad_v5.gif"));
+
     ImageIcon R_Freezer_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Freezer_v1.png"));
     ImageIcon R_Freezer_v2 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Freezer_v2.png"));
     ImageIcon R_Freezer_v3 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Freezer_v3.gif"));
@@ -152,6 +163,9 @@ public interface Icons {
     ImageIcon R_Shenron_v1 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"[RightFighter]_Shenron_v1.png"));
     // _R - End
 
+    //GroupIcons
+    ImageIcon GroupIcon_GinewSquad = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"GroupIcon_GinewSquad.png"));
+
     // OndaEnergetica
     ImageIcon Onda = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaGapEnanched.gif"));
     ImageIcon Onda_Yellow = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaYellow.gif"));
@@ -164,6 +178,7 @@ public interface Icons {
     ImageIcon Onda_Green = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"Onda_Green.gif"));
     ImageIcon Onda_C16 = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"Onda_C16.gif"));
     ImageIcon Onda_Junior = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaJunior.gif"));
+    ImageIcon Onda_Guldo = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaGuldo.gif"));
 
 
     ImageIcon OndaRev = new ImageIcon(Icons.class.getClassLoader().getResource(basePath+"OndaGapREnanched.gif"));

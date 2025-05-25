@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.DoMigliaccio"
-version = "3.3"
+version = "3.3.1"
 
 repositories {
     mavenCentral()
