@@ -9,8 +9,8 @@
     <version>3.3.1</version>
     <vendor email="" url="">Musto&amp;Migliaccio</vendor>
     <description><![CDATA[
-        <strong>🐉 "Unleash Your Coding Power with Dragonball-Inspired Progress Bars!" 🐉</strong> <br>
-        Introducing "DragonBall ProgressBar" – a dynamic plugin designed to revolutionize the visual experience of progress bars within your development environment that recreates your Dragon Ball favorite battles. Completely free and effortlessly customizable from setting panel, this plugin injects creativity and action thanks to all the 50 (and more) characters and their moves into your coding journey!
+        <strong>Unleash Your Coding Power with Dragonball-Inspired Progress Bars!</strong> <br>
+        Introducing "DragonBall ProgressBar"🐉 – a dynamic plugin designed to revolutionize the visual experience of progress bars within your development environment that recreates your Dragon Ball favorite battles. Completely free and effortlessly customizable from setting panel, this plugin injects creativity and action thanks to all the 50 (and more) characters and their moves into your coding journey!
         <br>
         Stay tuned for upcoming updates that will bring new characters!
         <em></em>
@@ -20,8 +20,8 @@
   ]]></description>
     <change-notes><![CDATA[
     <strong>Version 3.3.1<br></strong>
-    • BugFix update
-    • Sprite pool update: Ginyu Squad joins the battle!
+    • BugFix update; <br>
+    • Sprite pool update: Ginyu Squad joins the battle! <br>
     <strong>Version 3.3<br></strong>
     • Added randomize functionality: you can now choose to randomize fighters. One on each side or both!<br>
     • Sprite pool update: added Yamcha, Evil Bu.<br>
